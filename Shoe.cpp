@@ -17,6 +17,11 @@ void Shoe::_shuffle()
 //コンストラクタ
 Shoe::Shoe() {
 
+	inputShoe();
+}
+
+void Shoe::inputShoe()
+{
 	//カードを入れてく0.... /13でカード種類とする
 	for (int i = 0; i < NUM; i++) {
 		_cardShoe[i] = i;
@@ -55,6 +60,7 @@ int Shoe::takeCard() {
 	if (_cardNum <= 0) {
 		//標準出力
 		cout << "シューにカードがありません。" << endl;
+		inputShoe();
 		return -1;
 	}
 	int card = _cardShoe[_cardNum];

@@ -12,6 +12,8 @@ private:
 
 	void _shuffle();
 
+	void inputShoe();
+
 public:
 	enum SHOW_TYPE
 	{
