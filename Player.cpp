@@ -4,8 +4,13 @@
 
 using namespace std;
 
+Player::Player(const char pName[])
+{
+	copy(pName, pName + NAME, name);
+}
+
 //ゲーム実行
-void Player::playBase(Shoe* shoe) {
+void Player::playBase(Shoe& shoe) {
 	//バーストするまでループ処理
 	while (getScore()) {
 		cout << "hit or stand >> ";
@@ -16,7 +21,7 @@ void Player::playBase(Shoe* shoe) {
 		//hitが入力された場合
 		if (strcmp(str, "hit") == 0) {
 			//カードの配布
-			hit(*shoe);
+			hit(shoe);
 
 			//手札の表示
 			cout << "====================" << endl;
@@ -29,4 +34,13 @@ void Player::playBase(Shoe* shoe) {
 			break;
 		}
 	}
+}
+
+void Player::GetName()
+{
+	for (int i = 0; name[i] != NULL; i++)
+	{
+		cout << name[i] << flush;
+	}
+	cout << endl;
 }

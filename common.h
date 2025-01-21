@@ -4,4 +4,6 @@
 #define CARD 52 //トランプのカードの数(ジョーカーを除く)
 #define NUM DECK*CARD //カードの総数
 
+#define NAME 16
+
 #define HAND_SIZE 16

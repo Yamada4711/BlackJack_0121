@@ -27,6 +27,13 @@ Shoe::Shoe() {
 	_shuffle();
 }
 
+Shoe::Shoe(Shoe& other)
+{
+	//カードを入れてく0.... /13でカード種類とする
+	copy(other._cardShoe, other._cardShoe + NUM, _cardShoe);
+	_cardNum = other._cardNum; //カード枚数の設定
+}
+
 //カードシューを表示(デバッグ用)
 void Shoe::showShoe(SHOW_TYPE type) const 
 {
@@ -50,8 +57,8 @@ int Shoe::takeCard() {
 		cout << "シューにカードがありません。" << endl;
 		return -1;
 	}
-
 	int card = _cardShoe[_cardNum];
+	_cardNum--;
 
 	return card;
 }

@@ -22,6 +22,8 @@ public:
 	//コンストラクタ
 	Shoe();
 
+	Shoe(Shoe & other);
+
 	//カードを1枚取り出す
 	int takeCard();
 

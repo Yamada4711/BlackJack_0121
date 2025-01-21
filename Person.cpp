@@ -88,7 +88,7 @@ int Person::getScore()
 }
 
 //手持ちにカードの追加
-void Person::hit(Shoe shoe) {
+void Person::hit(Shoe& shoe) {
 	int card = shoe.takeCard();
 	if (card >= 0) {
 		_hand[_cardNum] = card;
@@ -121,7 +121,7 @@ void Person::showHand() {
 }
 
 // ターン処理
-bool Person::play(Shoe* shoe)
+bool Person::play(Shoe& shoe)
 {
 	playBase(shoe);
 
@@ -129,7 +129,7 @@ bool Person::play(Shoe* shoe)
 	return true;
 }
 
-//// ターンメイン処理
-void Person::playBase(Shoe* shoe)
+void Person::ShowName()
 {
+	GetName();
 }

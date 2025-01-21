@@ -20,16 +20,19 @@ public:
 	int getScore();
 
 	//カードの追加
-	void hit(Shoe shoe);
+	void hit(Shoe& shoe);
 
 	//手札を表示
 	void showHand();
 
 	//ターン処理
-	bool play(Shoe* shoe);
+	bool play(Shoe& shoe);
+
+	void ShowName();
 
 protected:
-	void playBase(Shoe* shoe);	//ターン処理本体
+	virtual void playBase(Shoe& shoe) = 0;	//ターン処理本体
 
+	virtual void GetName() = 0;
 };
 
